@@ -15,10 +15,18 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://newsapi.org/v2/everything?q=football&apiKey=1b89a43130a84c6e97053d85d207ae3e"
+          "https://suitmedia-backend.suitdev.com/api/ideas",
+          {
+            params: {
+              "page[number]": 1,
+              "page[size]": 10,
+              append: ["small_image", "medium_image"],
+              sort: "-published_at",
+            },
+          }
         );
-        console.log("Data from API:", response.data.articles);
-        setData(response.data.articles);
+        console.log("Data from API:", response.data);
+        // setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
