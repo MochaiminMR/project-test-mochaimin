@@ -1,5 +1,5 @@
 {
-  
+  "proxy" : "https://suitmedia-backend.suitdev.com",
   "name": "my-project",
   "private": true,
   "version": "0.0.0",
